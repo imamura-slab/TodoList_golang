@@ -14,8 +14,9 @@
 <!-- markdown-toc end -->
 
 # 1.はじめに
+*練習用プロジェクト*  
 Go言語とGORMを使用してTODOリストのWebアプリを作成する.  
-練習用プロジェクト
+
 
 # 2.概要
 ## 2.1.ver1
@@ -32,8 +33,8 @@ Go言語とGORMを使用してTODOリストのWebアプリを作成する.
 
 # 4.機能一覧
 ## 4.1.TODOアイテム登録機能
-以下の項目を記載してDBに登録する. (*: 必須)  
-- item: item名* (自由記述式)
+以下の項目を記載してDBに登録する (*: 必須)  
+- item*: item名 (自由記述式)
 - priority: 優先度 (選択式: -, high, middle, low)
 - status: ステータス (選択式: -, InProgress, Done)
 - deadline: 締切日時 (カレンダーから選択)
