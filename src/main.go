@@ -39,9 +39,12 @@ func registerPageHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("./templates/css"))))
-	http.HandleFunc("/", topPageHandler)
-	http.HandleFunc("/register", registerPageHandler)
+
+	mux := http.NewServeMux()
+	mux.Handle("/", http.HandlerFunc(topPageHandler))
+	mux.Handle("/register", http.HandlerFunc(registerPageHandler))
 	
-	http.ListenAndServe(":8080", nil)
+	log.Println("Starting server on :8080")
+	http.ListenAndServe(":8080", mux)
 }
 
